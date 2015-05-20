@@ -8,7 +8,7 @@ function codecA(a, b)
 }
 function codecB(a, b)
 {
-    if (a & b) {
+    if (a && b) {
         return a + b;
     } else {
         return a + ',' + b;
