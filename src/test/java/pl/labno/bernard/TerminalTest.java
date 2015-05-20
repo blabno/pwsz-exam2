@@ -36,6 +36,35 @@ public class TerminalTest {
     }
 
     @Test
+    public void sendLine_knownCommand_shouldSend(){
+        //given
+        Connection connectionMock = Mockito.mock(Connection.class);
+        Mockito.when(connectionMock.isConnected()).thenReturn(true);
+        Mockito.when(connectionMock.sendLine("line")).thenReturn("line");
+        Terminal terminal = new Terminal(connectionMock);
+
+        //when
+        String result = terminal.sendLine("line");
+
+        //then
+        Assert.assertEquals("line", result);
+    }
+
+    @Test
+    public void sendLine_unknownCommand_exception(){
+        //given
+        Connection connectionMock = Mockito.mock(Connection.class);
+        Mockito.when(connectionMock.isConnected()).thenReturn(true);
+        Mockito.when(connectionMock.sendLine("line")).thenThrow(new UnknownCommandException());
+        Terminal terminal = new Terminal(connectionMock);
+
+        //when & then
+        thrown.expect(IllegalStateException.class);
+        terminal.sendLine("line");
+    }
+
+
+    @Test
     public void getMessage_always_shouldReturnString(){
         //given
         Connection connectionMock = Mockito.mock(Connection.class);
