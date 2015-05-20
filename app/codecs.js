@@ -20,5 +20,5 @@ function codecC(a, b)
 }
 function codecD(a, b)
 {
-    return a == b;
+    return a === b;
 }
