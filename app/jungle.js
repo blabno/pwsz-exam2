@@ -4,20 +4,28 @@ function Donkey()
 }
 Donkey.prototype.makeHungry = function ()
 {
+	'use strict';
     this.hungry = true;
-}
+};
 Donkey.prototype.giveHay = function ()
 {
+	'use strict';
     this.hungry = false;
-}
+};
 Donkey.prototype.makeSound = function ()
 {
-    var noise = 'u-a-a';
-    if (this.hungry)
+	'use strict';
+    var noise;
+    if (this.hungry){
         noise = 'banana';
-        return noise;
-}
+    }
+
+    return noise;
+};
+
+/* exported rumble */
 function rumble()
 {
+	'use strict';
     return 'wofbrrrriiiitrututu';
 }
