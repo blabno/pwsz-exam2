@@ -30,7 +30,7 @@ public class TerminalTest {
  when(connMock.isConnected()).thenReturn(false);
  Terminal terminal = new Terminal(connMock);
  // When
- terminal.sendLine("line");
+ terminal.sendLine("pawelo");
  String errorMsg = terminal.getErrorMessage();
  // Then
  assertEquals("terminal is not connected", errorMsg);
@@ -46,7 +46,7 @@ public class TerminalTest {
  when(connMock.sendLine("line")).thenThrow(UnknownCommandException.class);
  Terminal terminal = new Terminal(connMock);
  // When
- terminal.sendLine("line");
+ terminal.sendLine("pawelo");
  String errorMsg = terminal.getErrorMessage();
  // Then
  assertEquals("This command is unknown", errorMsg);
