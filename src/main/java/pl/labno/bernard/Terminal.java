@@ -25,12 +25,17 @@ public class Terminal {
             try {
                 return connection.sendLine(line);
             } catch (UnknownCommandException exception) {
+
                 this.errorMessage = "This command is unknown";
                 throw new IllegalStateException("Unknown command", exception);
             }
+
         } else {
             this.errorMessage = "Terminal is not connected";
             throw new IllegalStateException("Not connected");
         }
     }
+
+
+
 }
