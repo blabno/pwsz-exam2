@@ -1,5 +1,6 @@
 /* exported codecA,codecB,codecC,codecD */
 
+
 function codecA(a, b)
 {
     'use strict';
