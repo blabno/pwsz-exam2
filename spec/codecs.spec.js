@@ -1,6 +1,7 @@
 /*globals codecA, codecB, codecD*/
 describe('codecA', function ()
 {
+    'use strict';
     describe('when a and b do the magic together', function ()
     {
         it('should return their sum', function ()
@@ -23,6 +24,7 @@ describe('codecA', function ()
 
 describe('codecB', function ()
 {
+    'use strict';
     describe('when a and b do the magic together', function ()
         {
             it('should return their sum', function ()
@@ -45,6 +47,7 @@ describe('codecB', function ()
 
 describe('codecC', function ()
 {
+    'use strict';
     describe('when a and b do the magic together', function ()
     {
         it('should return true', function ()
@@ -68,6 +71,8 @@ describe('codecC', function ()
 
 describe('codecD', function ()
 {
+    'use strict';
+    /* global codecC:false */
     describe('when a and b do the magic together', function ()
     {
         it('should return true', function ()
