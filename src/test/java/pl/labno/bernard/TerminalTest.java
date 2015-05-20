@@ -112,7 +112,7 @@ public class TerminalTest {
         Terminal terminal = new Terminal(con);
 
         when(con.isConnected()).thenReturn(true);
-        when(con.sendLine(".")).thenThrow(IllegalStateException.class);
+        when(con.sendLine(".")).thenThrow(UnknownCommandException.class);
 
         //When
         terminal.sendLine(".");
