@@ -1,5 +1,6 @@
 describe('Donkey', function ()
 {
+    'use strict';
     var donkey;
     beforeEach(function ()
     {
@@ -28,3 +29,5 @@ describe('Donkey', function ()
         });
     });
 });
+
+
