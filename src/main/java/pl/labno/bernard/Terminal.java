@@ -33,4 +33,5 @@ public class Terminal {
             throw new IllegalStateException("Not connected");
         }
     }
+
 }
