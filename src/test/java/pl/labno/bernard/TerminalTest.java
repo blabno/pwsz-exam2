@@ -37,4 +37,33 @@ public class TerminalTest {
         assertEquals("terminal is not connected", errorMsg);
     }
 
-    @
+    @Test
+    public void sendLine_connectionIsConnectedAndCommandNotValid_throwExceptionAndSetErrorMsg() {
+        exception.expect(IllegalStateException.class);
+        exception.expectMessage("Unknown command");
+        // Given
+        Connection connMock = mock(Connection.class);
+        when(connMock.isConnected()).thenReturn(true);
+        when(connMock.sendLine("line")).thenThrow(UnknownCommandException.class);
+        Terminal terminal = new Terminal(connMock);
+        // When
+        terminal.sendLine("line");
+        String errorMsg = terminal.getErrorMessage();
+        // Then
+        assertEquals("This command is unknown", errorMsg);
+    }
+
+    @Test
+    public void sendLine_connectionIsConnectedAndCommandIsValid_executeConnectionSendLine() {
+        // Given
+        Connection connMock = mock(Connection.class);
+        when(connMock.isConnected()).thenReturn(true);
+        when(connMock.sendLine("line")).thenReturn("line");
+        Terminal terminal = new Terminal(connMock);
+        // When
+        String line = terminal.sendLine("line");
+        // Then
+        assertEquals("line", line);
+    }
+
+}
