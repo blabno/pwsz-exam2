@@ -1,6 +1,5 @@
 function Donkey()
 {
-
 }
 Donkey.prototype.makeHungry = function ()
 {
@@ -18,13 +17,12 @@ Donkey.prototype.makeSound = function ()
     var noise = 'u-a-a';
     if (this.hungry) {
         noise = 'banana';
-    }
         return noise;
+    }
 };
 /*jshint unused:false*/
-function rumble()
-{
-    'use strict';
-    return 'wofbrrrriiiitrututu';
-}
-
+ function rumble()
+ {
+ 'use strict';
+ return 'wofbrrrriiiitrututu';
+ }

@@ -1,4 +1,4 @@
-/*globals codecA, codecB, codecD,codecC*/
+/*globals codecA, codecB, codecC, codecD*/
 describe('codecA', function ()
 {
     'use strict';
@@ -21,18 +21,17 @@ describe('codecA', function ()
         });
     });
 });
-
 describe('codecB', function ()
 {
     'use strict';
     describe('when a and b do the magic together', function ()
+    {
+        it('should return their sum', function ()
         {
-            it('should return their sum', function ()
-            {
-                expect(codecA(2, 3)).toEqual(5);
-                expect(codecA(3, 2)).toEqual(5);
-            });
+            expect(codecA(2, 3)).toEqual(5);
+            expect(codecA(3, 2)).toEqual(5);
         });
+    });
     describe('otherwise', function ()
     {
         it('should return a', function ()
@@ -44,7 +43,6 @@ describe('codecB', function ()
         });
     });
 });
-
 describe('codecC', function ()
 {
     'use strict';
@@ -65,10 +63,7 @@ describe('codecC', function ()
             expect(codecD(3, '3')).toEqual(false);
         });
     });
-
 });
-
-
 describe('codecD', function ()
 {
     'use strict';
@@ -91,4 +86,3 @@ describe('codecD', function ()
         });
     });
 });
-
